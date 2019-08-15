@@ -2,7 +2,7 @@
 This is a repository to build HTML based in json struct
 
 ## Base Struct
-The json component is basicly:
+The json payload is as follow:
 ```json
 {
 	"tag": "div",
@@ -26,7 +26,7 @@ If the component tag is self closing, content and children will be ignored;
 	JSON2HTML.build(someJson);
 ```
 
-You can checkout the example in docs folder.
+You can check the example in docs folder.
 
 ## Contributions
 Yes, please! Everybody is welcome.
