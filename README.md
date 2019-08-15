@@ -21,7 +21,7 @@ The json payload is as follow:
 If the component tag is self closing, content and children will be ignored;
 
 ## Usage
-```json
+```javascript
 	var someJson = {};
 	JSON2HTML.build(someJson);
 ```
