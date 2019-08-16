@@ -8,8 +8,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-google": "^0.13.0"
+    "eslint": "6.1.0",
+    "eslint-config-google": "0.13.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
