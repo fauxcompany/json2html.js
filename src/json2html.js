@@ -13,7 +13,7 @@ class JSON2HTML {
     const keys = Object.keys(json.attributes);
     for (const index in keys) {
       if ({}.hasOwnProperty.call(keys, index)) {
-        html += ' '+keys[index]+'="'+json.attributes[keys[index]]+'"';
+        html += ` ${keys[index]}="${json.attributes[keys[index]]}"`;
       }
     }
     return html;
@@ -36,15 +36,15 @@ class JSON2HTML {
 
   static build(json) {
     if (!json) return '';
-    let html = '<'+json.tag;
+    let html = `<${json.tag}`;
     html += JSON2HTML.attributtes(json);
     if (JSON2HTML.isSelfCloseTag(json)) {
-      return html + '/>';
+      return `${html}/>`;
     }
     html += '>';
     html += JSON2HTML.children(json);
     html += JSON2HTML.content(json);
-    return html + '</'+json.tag+'>';
+    return `${html}</${json.tag}>`;
   }
 
   static isSelfCloseTag(json) {
