@@ -36,15 +36,13 @@ class JSON2HTML {
 
   static build(json) {
     if (!json) return '';
-    let html = `<${json.tag}`;
-    html += JSON2HTML.attributtes(json);
+    const atributes = JSON2HTML.attributtes(json);
     if (JSON2HTML.isSelfCloseTag(json)) {
-      return `${html}/>`;
+      return `<${json.tag} ${atributes}/>`;
     }
-    html += '>';
-    html += JSON2HTML.children(json);
-    html += JSON2HTML.content(json);
-    return `${html}</${json.tag}>`;
+    const children = JSON2HTML.children(json);
+    const content = JSON2HTML.content(json);
+    return `<${json.tag} ${atributes}>${children} ${content}</${json.tag}>`;
   }
 
   static isSelfCloseTag(json) {
