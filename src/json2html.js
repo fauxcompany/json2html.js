@@ -22,9 +22,9 @@ class JSON2HTML {
     if (!html) return {};
     const el = document.createElement('html');
     el.innerHTML = html;
-    const body = el.getElementsByTagName('body')[0];
+    const body = el.querySelector('body');
     if (!body) return {};
-    const first = body.children[0];
+    const [first] = body.children;
     if (!first) return {};
     return JSON2HTMLUnbuilder.node2json(first);
   }
@@ -88,7 +88,7 @@ class JSON2HTMLUnbuilder {
 
   static children(nodeEl) {
     const children = [];
-    for (const index in [].slice.call(nodeEl.children)) {
+    for (const index in [...nodeEl.children]) {
       if ({}.hasOwnProperty.call(nodeEl.children, index)) {
         children.push(JSON2HTMLUnbuilder.node2json(nodeEl.children[index]));
       }
