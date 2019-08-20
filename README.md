@@ -24,6 +24,8 @@ If the component tag is self closing, content and children will be ignored;
 ```javascript
 	var someJson = {};
 	JSON2HTML.build(someJson);
+	var someHtml = '<div></div>';
+	JSON2HTML.unbuild(someHtml);
 ```
 
 You can check the example in docs folder.

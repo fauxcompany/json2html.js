@@ -1,6 +1,6 @@
 {
   "name": "json2html.js",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Plugin Javascript to build HTML based in json struct",
   "main": "json2html.js",
   "directories": {

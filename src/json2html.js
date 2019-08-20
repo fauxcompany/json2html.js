@@ -7,6 +7,30 @@ class JSON2HTML {
     ];
   }
 
+  static build(json) {
+    if (!json) return '';
+    const atributes = JSON2HTMLBuilder.attributtes(json);
+    if (JSON2HTMLBuilder.isSelfCloseTag(json)) {
+      return `<${json.tag} ${atributes}/>`;
+    }
+    const children = JSON2HTMLBuilder.children(json);
+    const content = JSON2HTMLBuilder.content(json);
+    return `<${json.tag} ${atributes}>${children} ${content}</${json.tag}>`;
+  }
+
+  static unbuild(html) {
+    if (!html) return {};
+    const el = document.createElement('html');
+    el.innerHTML = html;
+    const body = el.querySelector('body');
+    if (!body) return {};
+    const [first] = body.children;
+    if (!first) return {};
+    return JSON2HTMLUnbuilder.node2json(first);
+  }
+}
+
+class JSON2HTMLBuilder {
   static attributtes(json) {
     if (!json.attributes) return '';
     let html = '';
@@ -34,18 +58,49 @@ class JSON2HTML {
     return json && json.content || '';
   }
 
-  static build(json) {
-    if (!json) return '';
-    const atributes = JSON2HTML.attributtes(json);
-    if (JSON2HTML.isSelfCloseTag(json)) {
-      return `<${json.tag} ${atributes}/>`;
-    }
-    const children = JSON2HTML.children(json);
-    const content = JSON2HTML.content(json);
-    return `<${json.tag} ${atributes}>${children} ${content}</${json.tag}>`;
-  }
-
   static isSelfCloseTag(json) {
     return (JSON2HTML.selfCloseTags.indexOf(json.tag)>-1);
+  }
+};
+
+
+class JSON2HTMLUnbuilder {
+  static attributes(nodeEl) {
+    const attributes = {};
+    const keys = Object.keys(nodeEl.attributes);
+    for (const index in keys) {
+      if ({}.hasOwnProperty.call(keys, index)) {
+        const key = keys[index];
+        const attribute = nodeEl.attributes[key];
+        attributes[attribute.name] = attribute.value;
+      }
+    }
+    return attributes;
+  }
+
+  static content(nodeEl) {
+    let text = '';
+    for (var i = 0; i < nodeEl.childNodes.length; ++i)
+      if (nodeEl.childNodes[i].nodeType === 3)
+        text += nodeEl.childNodes[i].textContent;
+    return text.trim();
+  }
+
+  static children(nodeEl) {
+    const children = [];
+    for (const index in [...nodeEl.children]) {
+      if ({}.hasOwnProperty.call(nodeEl.children, index)) {
+        children.push(JSON2HTMLUnbuilder.node2json(nodeEl.children[index]));
+      }
+    }
+    return children;
+  }
+  static node2json(nodeEl) {
+    return {
+      tag: nodeEl.tagName.toLowerCase(),
+      attributes: JSON2HTMLUnbuilder.attributes(nodeEl),
+      content: JSON2HTMLUnbuilder.content(nodeEl),
+      children: JSON2HTMLUnbuilder.children(nodeEl),
+    };
   }
 };
