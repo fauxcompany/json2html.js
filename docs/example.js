@@ -30,21 +30,11 @@ const example = {
               },
               "children": [
                 {
-                  "tag": "div",
+                  "tag": "pre",
                   "attributes": {
-                    "id": "menu1",
+                    "id": "unbuild",
                     "class": "tab-pane container active"
-                  },
-                  "children": [
-                    {
-                      "tag": "h2",
-                      "content": "Menu 1"
-                    },
-                    {
-                      "tag": "p",
-                      "content": "Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome."
-                    }
-                  ]
+                  }
                 },
                 {
                   "tag": "div",
@@ -100,14 +90,14 @@ const example = {
                     {
                       "tag": "a",
                       "attributes": {
-                        "href": "#menu1",
+                        "href": "#unbuild",
                         "class": "active",
                         "data-toggle": "tab",
                         "role": "tab",
                         "aria-controls": "home",
                         "aria-selected": "true"
                       },
-                      "content": "Menu 1"
+                      "content": "Unbuild"
                     }
                   ]
                 },
