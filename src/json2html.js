@@ -14,8 +14,7 @@ class JSON2HTML {
       return `<${json.tag} ${atributes}/>`;
     }
     const children = JSON2HTMLBuilder.children(json);
-    const content = JSON2HTMLBuilder.content(json);
-    return `<${json.tag} ${atributes}>${children} ${content}</${json.tag}>`;
+    return `<${json.tag} ${atributes}>${children}</${json.tag}>`;
   }
 
   static unbuild(html) {
@@ -48,14 +47,14 @@ class JSON2HTMLBuilder {
     let html = '';
     for (const index in json.children) {
       if ({}.hasOwnProperty.call(json.children, index)) {
-        html += JSON2HTML.build(json.children[index]);
+        if (typeof json.children[index] == 'object') {
+          html += JSON2HTML.build(json.children[index]);
+        } else {
+          html +=json.children[index];
+        }
       }
     }
     return html;
-  }
-
-  static content(json) {
-    return json && json.content || '';
   }
 
   static isSelfCloseTag(json) {
@@ -78,19 +77,14 @@ class JSON2HTMLUnbuilder {
     return attributes;
   }
 
-  static content(nodeEl) {
-    let text = '';
-    for (var i = 0; i < nodeEl.childNodes.length; ++i)
-      if (nodeEl.childNodes[i].nodeType === 3)
-        text += nodeEl.childNodes[i].textContent;
-    return text.trim();
-  }
-
   static children(nodeEl) {
     const children = [];
-    for (const index in [...nodeEl.children]) {
-      if ({}.hasOwnProperty.call(nodeEl.children, index)) {
-        children.push(JSON2HTMLUnbuilder.node2json(nodeEl.children[index]));
+    for (const index in nodeEl.childNodes) {
+      if (nodeEl.childNodes[index].nodeType === Node.ELEMENT_NODE) {
+        children.push(JSON2HTMLUnbuilder.node2json(nodeEl.childNodes[index]));
+      }
+      if (nodeEl.childNodes[index].nodeType === Node.TEXT_NODE) {
+        children.push(nodeEl.childNodes[index].textContent);
       }
     }
     return children;
@@ -99,7 +93,6 @@ class JSON2HTMLUnbuilder {
     return {
       tag: nodeEl.tagName.toLowerCase(),
       attributes: JSON2HTMLUnbuilder.attributes(nodeEl),
-      content: JSON2HTMLUnbuilder.content(nodeEl),
       children: JSON2HTMLUnbuilder.children(nodeEl),
     };
   }

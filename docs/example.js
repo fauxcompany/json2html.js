@@ -1,167 +1,174 @@
 const example = {
-  "tag": "div",
-  "attributes": {
-    "class": "container"
+  'tag': 'div',
+  'attributes': {
+    'class': 'container',
   },
-  "children": [
+  'children': [
     {
-      "tag": "div",
-      "attributes": {
-        "class": "row"
+      'tag': 'div',
+      'attributes': {
+        'class': 'row',
       },
-      "children": [
+      'children': [
         {
-          "tag": "div",
-          "attributes": {
-            "class": "col-md-8"
+          'tag': 'div',
+          'attributes': {
+            'class': 'col-md-8',
           },
-          "children": [
+          'children': [
             {
-              "tag": "img",
-              "attributes": {
-                "class": "banner",
-                "src": "http://wowslider.com/sliders/demo-93/data1/images/sunset.jpg"
-              }
+              'tag': 'img',
+              'attributes': {
+                'class': 'banner',
+                'src': 'http://wowslider.com/sliders/demo-93/data1/images/sunset.jpg',
+              },
             },
             {
-              "tag": "div",
-              "attributes": {
-                "class": "tab-content"
+              'tag': 'div',
+              'attributes': {
+                'class': 'tab-content',
               },
-              "children": [
+              'children': [
                 {
-                  "tag": "pre",
-                  "attributes": {
-                    "id": "unbuild",
-                    "class": "tab-pane container active"
-                  }
+                  'tag': 'pre',
+                  'attributes': {
+                    'id': 'unbuild',
+                    'class': 'tab-pane container active',
+                  },
                 },
                 {
-                  "tag": "div",
-                  "attributes": {
-                    "id": "menu2",
-                    "class": "tab-pane container fade"
+                  'tag': 'div',
+                  'attributes': {
+                    'id': 'menu2',
+                    'class': 'tab-pane container fade',
                   },
-                  "content": "<h2>Menu 2</h2>Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome. "
+                  'children': [
+                    '<h2>Menu 2</h2>Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome. ',
+                  ],
                 },
                 {
-                  "tag": "div",
-                  "attributes": {
-                    "id": "menu3",
-                    "class": "tab-pane container fade"
+                  'tag': 'div',
+                  'attributes': {
+                    'id': 'menu3',
+                    'class': 'tab-pane container fade',
                   },
-                  "content": "<h2>Menu 3</h2>Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome. "
+                  'children': ['<h2>Menu 3</h2>Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome. '],
                 },
                 {
-                  "tag": "div",
-                  "attributes": {
-                    "id": "menu4",
-                    "class": "tab-pane container fade"
+                  'tag': 'div',
+                  'attributes': {
+                    'id': 'menu4',
+                    'class': 'tab-pane container fade',
                   },
-                  "content": "<h2>Menu 4</h2>Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome. "
-                }
-              ]
-            }
-          ]
+                  'children': [
+                    {
+                      'tag': 'span',
+                      'children': ['Boy numinous dome city Legba sprawl woman uplink voodoo god. 3D-printed grenade decay dolphin plastic math-numinous into ablative systemic rebar chrome vinyl cyber. Artisanal disposable footage warehouse saturation point otaku semiotics claymore mine futurity katana modem. Office fetishism disposable advert savant physical chrome. '],
+                    }, '<h2>Menu 4</h2>',
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "tag": "aside",
-          "attributes": {
-            "class": "col-md-3 col-sm-3 col-xs-12"
+          'tag': 'aside',
+          'attributes': {
+            'class': 'col-md-3 col-sm-3 col-xs-12',
           },
-          "children": [
+          'children': [
             {
-              "tag": "a",
-              "attributes": {
-                "href": "#",
-                "class": "link1"
+              'tag': 'a',
+              'attributes': {
+                'href': '#',
+                'class': 'link1',
               },
-              "content": "Link 1"
+              'children': ['Link 1'],
             },
             {
-              "tag": "ul",
-              "attributes": {
-                "class": "menu-right nav nav-tabs"
+              'tag': 'ul',
+              'attributes': {
+                'class': 'menu-right nav nav-tabs',
               },
-              "children": [
+              'children': [
                 {
-                  "tag": "li",
-                  "children": [
+                  'tag': 'li',
+                  'children': [
                     {
-                      "tag": "a",
-                      "attributes": {
-                        "href": "#unbuild",
-                        "class": "active",
-                        "data-toggle": "tab",
-                        "role": "tab",
-                        "aria-controls": "home",
-                        "aria-selected": "true"
+                      'tag': 'a',
+                      'attributes': {
+                        'href': '#unbuild',
+                        'class': 'active',
+                        'data-toggle': 'tab',
+                        'role': 'tab',
+                        'aria-controls': 'home',
+                        'aria-selected': 'true',
                       },
-                      "content": "Unbuild"
-                    }
-                  ]
+                      'children': ['Unbuild'],
+                    },
+                  ],
                 },
                 {
-                  "tag": "li",
-                  "children": [
+                  'tag': 'li',
+                  'children': [
                     {
-                      "tag": "a",
-                      "attributes": {
-                        "href": "#menu2",
-                        "data-toggle": "tab",
-                        "role": "tab",
-                        "aria-controls": "home",
-                        "aria-selected": "false"
+                      'tag': 'a',
+                      'attributes': {
+                        'href': '#menu2',
+                        'data-toggle': 'tab',
+                        'role': 'tab',
+                        'aria-controls': 'home',
+                        'aria-selected': 'false',
                       },
-                      "content": "Menu 2"
-                    }
-                  ]
+                      'children': ['Menu 2'],
+                    },
+                  ],
                 },
                 {
-                  "tag": "li",
-                  "children": [
+                  'tag': 'li',
+                  'children': [
                     {
-                      "tag": "a",
-                      "attributes": {
-                        "href": "#menu3",
-                        "data-toggle": "tab",
-                        "role": "tab",
-                        "aria-controls": "home",
-                        "aria-selected": "false"
+                      'tag': 'a',
+                      'attributes': {
+                        'href': '#menu3',
+                        'data-toggle': 'tab',
+                        'role': 'tab',
+                        'aria-controls': 'home',
+                        'aria-selected': 'false',
                       },
-                      "content": "Menu 3"
-                    }
-                  ]
+                      'children': ['Menu 3'],
+                    },
+                  ],
                 },
                 {
-                  "tag": "li",
-                  "children": [
+                  'tag': 'li',
+                  'children': [
                     {
-                      "tag": "a",
-                      "attributes": {
-                        "href": "#menu4",
-                        "data-toggle": "tab",
-                        "role": "tab",
-                        "aria-controls": "home",
-                        "aria-selected": "false"
+                      'tag': 'a',
+                      'attributes': {
+                        'href': '#menu4',
+                        'data-toggle': 'tab',
+                        'role': 'tab',
+                        'aria-controls': 'home',
+                        'aria-selected': 'false',
                       },
-                      "content": "Manu 4"
-                    }
-                  ]
-                }
-              ]
+                      'children': ['Menu 4'],
+                    },
+                  ],
+                },
+              ],
             },
             {
-              "tag": "a",
-              "attributes": {
-                "href": "#",
-                "class": "link2"
+              'tag': 'a',
+              'attributes': {
+                'href': '#',
+                'class': 'link2',
               },
-              "content": "Link 2"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+              'children': ['Link 2'],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
