@@ -16,12 +16,12 @@ This is a repository to build HTML based in json struct
 ![stars](https://img.shields.io/github/stars/fauxcompany/json2html.js.svg?style=social)
 ![watchers](https://img.shields.io/github/watchers/fauxcompany/json2html.js.svg?style=social)
 
-### Contribuidores
+### Contributors
 - [andergtk](https://github.com/leomoty)  ![followers](https://img.shields.io/github/followers/andergtk.svg?style=social)
 - [guifabrin](https://github.com/guifabrin) - ![followers](https://img.shields.io/github/followers/guifabrin.svg?style=social)
 - [leomoty](https://github.com/leomoty)  ![followers](https://img.shields.io/github/followers/leomoty.svg?style=social)
 
-### Outros
+### Others
 [![BCH compliance](https://bettercodehub.com/edge/badge/fauxcompany/json2html.js?branch=master)](https://bettercodehub.com/)
 ## Base Struct
 The json payload is as follow:
@@ -33,9 +33,8 @@ The json payload is as follow:
 		"class": "some-class"
 	},
 	"children": [
-		//...components
+		//...components or "some-text-or-html"
 	],
-	"content": "some-text-or-html",
 }
 ```
 
