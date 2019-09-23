@@ -8,7 +8,7 @@
     "src": "src"
   },
   "devDependencies": {
-    "eslint": "6.2.2",
+    "eslint": "6.4.0",
     "eslint-config-google": "0.13.0",
     "qunit": "2.9.2"
   },
