@@ -8,13 +8,13 @@ class JSON2HTML {
   }
 
   static build(json) {
-    if (!json) return '';
-    const atributes = JSON2HTMLBuilder.attributtes(json);
+    if (!json || !json.tag) return '';
+    const attributes = JSON2HTMLBuilder.attributes(json);
     if (JSON2HTMLBuilder.isSelfCloseTag(json)) {
-      return `<${json.tag} ${atributes}/>`;
+      return `<${json.tag} ${attributes}/>`;
     }
     const children = JSON2HTMLBuilder.children(json);
-    return `<${json.tag} ${atributes}>${children}</${json.tag}>`;
+    return `<${json.tag} ${attributes}>${children}</${json.tag}>`;
   }
 
   static unbuild(html) {
@@ -30,7 +30,7 @@ class JSON2HTML {
 }
 
 class JSON2HTMLBuilder {
-  static attributtes(json) {
+  static attributes(json) {
     if (!json.attributes) return '';
     let html = '';
     const keys = Object.keys(json.attributes);

@@ -4,15 +4,16 @@
   "description": "Plugin Javascript to build HTML based in json struct",
   "main": "json2html.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "src": "src"
   },
-  "dependencies": {},
   "devDependencies": {
     "eslint": "6.2.2",
-    "eslint-config-google": "0.13.0"
+    "eslint-config-google": "0.13.0",
+    "qunit": "^2.9.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "qunit tests/tests.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/fauxcompany/json2html.js/issues"
   },
-  "homepage": "https://github.com/fauxcompany/json2html.js#readme"
+  "homepage": "https://github.com/fauxcompany/json2html.js#readme",
+  "dependencies": {
+    "jsdom": "^15.1.1"
+  }
 }
