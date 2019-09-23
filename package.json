@@ -1,6 +1,6 @@
 {
   "name": "json2html.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Plugin Javascript to build HTML based in json struct",
   "main": "json2html.js",
   "directories": {
@@ -29,8 +29,5 @@
   "bugs": {
     "url": "https://github.com/fauxcompany/json2html.js/issues"
   },
-  "homepage": "https://github.com/fauxcompany/json2html.js#readme",
-  "dependencies": {
-    "jsdom": "^15.1.1"
-  }
+  "homepage": "https://github.com/fauxcompany/json2html.js#readme"
 }
