@@ -11,10 +11,10 @@ class JSON2HTML {
     if (!json || !json.tag) return '';
     const attributes = JSON2HTMLBuilder.attributes(json);
     if (JSON2HTMLBuilder.isSelfCloseTag(json)) {
-      return `<${json.tag} ${attributes}/>`;
+      return `<${json.tag}${attributes}/>`;
     }
     const children = JSON2HTMLBuilder.children(json);
-    return `<${json.tag} ${attributes}>${children}</${json.tag}>`;
+    return `<${json.tag}${attributes}>${children}</${json.tag}>`;
   }
 
   static unbuild(html) {
@@ -79,14 +79,14 @@ class JSON2HTMLUnbuilder {
 
   static children(nodeEl) {
     const children = [];
-    for (const index in nodeEl.childNodes) {
+    nodeEl.childNodes.forEach(function(element, index) {
       if (nodeEl.childNodes[index].nodeType === Node.ELEMENT_NODE) {
-        children.push(JSON2HTMLUnbuilder.node2json(nodeEl.childNodes[index]));
+        children.push(JSON2HTMLUnbuilder.node2json(element, index));
       }
       if (nodeEl.childNodes[index].nodeType === Node.TEXT_NODE) {
         children.push(nodeEl.childNodes[index].textContent);
       }
-    }
+    });
     return children;
   }
   static node2json(nodeEl) {
@@ -96,4 +96,4 @@ class JSON2HTMLUnbuilder {
       children: JSON2HTMLUnbuilder.children(nodeEl),
     };
   }
-};
+}
