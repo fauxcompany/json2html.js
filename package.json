@@ -10,9 +10,9 @@
   "devDependencies": {
     "eslint": "6.4.0",
     "eslint-config-google": "0.14.0",
-    "jsdom": "^15.1.1",
-    "jsdom-global": "^3.0.2",
-    "qunit": "^2.9.2"
+    "jsdom": "15.1.1",
+    "jsdom-global": "3.0.2",
+    "qunit": "2.9.2"
   },
   "scripts": {
     "test": "qunit tests/tests.js"
