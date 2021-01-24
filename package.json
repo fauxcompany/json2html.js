@@ -12,7 +12,7 @@
     "eslint-config-google": "0.14.0",
     "jsdom": "16.2.1",
     "jsdom-global": "3.0.2",
-    "qunit": "2.9.3"
+    "qunit": "2.14.0"
   },
   "scripts": {
     "test": "qunit tests/tests.js"
