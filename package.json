@@ -8,7 +8,7 @@
     "src": "src"
   },
   "devDependencies": {
-    "eslint": "7.21.0",
+    "eslint": "7.32.0",
     "eslint-config-google": "0.14.0",
     "jsdom": "16.5.0",
     "jsdom-global": "3.0.2",
