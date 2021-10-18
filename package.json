@@ -10,7 +10,7 @@
   "devDependencies": {
     "eslint": "7.21.0",
     "eslint-config-google": "0.14.0",
-    "jsdom": "16.5.0",
+    "jsdom": "16.7.0",
     "jsdom-global": "3.0.2",
     "qunit": "2.14.0"
   },
